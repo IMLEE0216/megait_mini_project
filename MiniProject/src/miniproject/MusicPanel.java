@@ -231,7 +231,7 @@ public class MusicPanel implements ActionListener, Runnable {
 	public void run() {
 		for (long i = 0; i < endTime; ++i) {
 			try {
-				Thread.sleep((long)1.2111111111111111111111111111111111111);
+				Thread.sleep((long)1);
 				AudioInputStream stream = AudioSystem.getAudioInputStream(BothKeyPress.map.get(i));
 				Clip clip = AudioSystem.getClip();
 				clip.open(stream);
