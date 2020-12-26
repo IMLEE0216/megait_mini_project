@@ -1,4 +1,4 @@
 응응
 
 
-[javadoc](file:///C:/Users/PC!/git/mini_project_repo/MiniProject/doc/index.html)
+[javadoc](https://imlee0216.github.io/megait_mini_project/doc/index.html)
