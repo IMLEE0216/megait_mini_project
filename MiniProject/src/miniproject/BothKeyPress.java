@@ -15,6 +15,12 @@ import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+
+/**
+ * 피아노 및 드럼 소리 
+ * @author 이현성
+ *
+ */
 public class BothKeyPress implements KeyListener {
 	/**
 	 * 
