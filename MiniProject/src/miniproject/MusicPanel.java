@@ -19,7 +19,7 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 	/**
-	 * JFrame에 넣을 {@link JButton}, {@link JPanel} 추가 
+	 * JFrame에  {@link JButton}, {@link JPanel} 추가 
 	 * @param filechooser 파일열기창 <br>
 	 * @param selectedFile 선택된 WAV파일 <br>
 	 * @param cliptime 초기값 <br>
