@@ -18,7 +18,7 @@ public class Main extends JFrame{
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 		setFocusable(true);
-		
+		setResizable(false);
 		new DrumPanel(this).setDrumPanel();
 		new PianoPanel(this).setPianoPanel();
 		new MusicPanel(this).setMusicPanel();
