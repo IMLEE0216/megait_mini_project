@@ -33,7 +33,7 @@ public class BothKeyPress implements KeyListener {
 	}
 	
 	/**
-	 * 
+	 * 아니이거는 뭐를 하하는더영ㅁㄴㄹㄹ
 	 */
 	public void record() {
 		if (Main.now == PlayStatus.RECORD) {
