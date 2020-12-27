@@ -5,8 +5,8 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 /**
- * 프로그램의 Main 프레임
- * 사용자의 입력에 따라 {@link KeyListener} 및 {@link ActionListener} 포함한다.
+ * 프로그램의 Main 프레임 <br>
+ * 사용자의 입력에 따라 {@link KeyListener} 및 {@link ActionListener} 포함한다. <br>
  * @author 이현성
  * 
  */
