@@ -33,10 +33,11 @@
  -  녹음된 것을 다시 내보낼 때 사용자가 입력한 만큼의 속도로 출력하지 않는다. 컴퓨터의 문제 또는 코드 입력값의 문제일 수 있지만 개선 할 수 있다면 개선 필요.
  -  녹음을 하고 다시 녹음을 했을 때, 덮어쓰기의 녹음이 된다. 이점을 개선해야 할 것 같다.
 
-
+ <YoutubeLink>
 <div>
-  <YoutubeLink>
   <a href="https://www.youtube.com/watch?v=sUIcFpxSJtI" target="_blank"><image src = "https://img.youtube.com/vi/sUIcFpxSJtI/mqdefault.jpg"></a>
 </div>
+  
+  
   
 [javadoc](https://imlee0216.github.io/megait_mini_project/MiniProject/doc/index.html)
