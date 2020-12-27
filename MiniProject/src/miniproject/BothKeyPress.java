@@ -16,15 +16,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class BothKeyPress implements KeyListener {
-	
-	public static final String WAV = "C:\\Users\\PC!\\Desktop\\JAVA\\MiniProject\\sound_files\\";
-	public File file;
-	public static TreeMap<Long, File> map = new TreeMap<>();
-	
 	/**
 	 * 
 	 * @param file 컴퓨터 내에 저장된 피아노 음 파일 
 	 */
+	public static final String WAV = "C:\\Users\\PC!\\Desktop\\JAVA\\MiniProject\\sound_files\\";
+	public File file;
+	public static TreeMap<Long, File> map = new TreeMap<>();
+
 	public void clip(File file) {
 		this.file = file;
 		try {
@@ -244,7 +243,7 @@ public class BothKeyPress implements KeyListener {
 
 	}
 /**
- * {@link JButton}의 원래 background로 수정
+ * {@link JButton}의 본 background로 수정
  */
 	@Override
 	public void keyReleased(KeyEvent e) {
