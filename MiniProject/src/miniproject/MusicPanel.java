@@ -18,17 +18,19 @@ import javax.swing.plaf.FileChooserUI;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-	/**
-	 * JFrame에  {@link JButton}, {@link JPanel} 추가 <br>
-	 * @param filechooser 파일열기창 <br>
-	 * @param selectedFile 선택된 WAV파일 <br>
-	 * @param cliptime 초기값 <br>
-	 * 		단위 밀리초 <br>
-	 * @param clip 재생전 로드(데이터라인) <br>
-	 * 
-	 *
-	 */
-public class MusicPanel implements ActionListener, Runnable {
+
+/**
+ * JFrame에 {@link JButton}, {@link JPanel} 추가 <br>
+ * 
+ * @param filechooser  파일열기창 <br>
+ * @param selectedFile 선택된 WAV파일 <br>
+ * @param cliptime     초기값 <br>
+ *                     단위 밀리초 <br>
+ * @param clip         재생전 로드(데이터라인) <br>
+ * @author 이현성
+ *
+ */
+class MusicPanel implements ActionListener, Runnable {
 	private String[] btn_M = { "open", "play", "pause", "stop", "reset", "Record", "StopRecrod", "PlayRecord" };
 	private JButton[] btnM = new JButton[8];
 	private String[] tp = { "musicState", "recordState" };
@@ -93,10 +95,11 @@ public class MusicPanel implements ActionListener, Runnable {
 		}
 
 	}
+
 	/**
 	 * ActionEvent에 따른 actionPerformed
 	 */
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -200,6 +203,7 @@ public class MusicPanel implements ActionListener, Runnable {
 		}
 
 	}
+
 	/**
 	 * {@link AudioInputStream}에 selectedFile 넣기 <br>
 	 * {@link Clip}에 Audio clip 취득 및 준비
@@ -216,8 +220,9 @@ public class MusicPanel implements ActionListener, Runnable {
 		}
 
 	}
+
 	/**
-	 * ActionEvent {@link JButton}에 따라 {@link JPanel} 입력 수정 
+	 * ActionEvent {@link JButton}에 따라 {@link JPanel} 입력 수정
 	 */
 	public void TextPane() {
 		tpMR[0].setText("등록 된 음악 없음");
@@ -228,6 +233,7 @@ public class MusicPanel implements ActionListener, Runnable {
 			document.setParagraphAttributes(0, document.getLength(), center, false);
 		}
 	}
+
 	/**
 	 * 불러온 WAV파일 이름에 따라 {@link ImageIcon} 변경
 	 */
