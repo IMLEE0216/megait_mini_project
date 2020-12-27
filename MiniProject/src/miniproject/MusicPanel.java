@@ -14,26 +14,36 @@ import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
+import javax.swing.plaf.FileChooserUI;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-
+	/**
+	 * JFrame에 넣을 {@link JButton}, {@link JPanel} 추가 
+	 * @param filechooser 파일열기창 <br>
+	 * @param selectedFile 선택된 WAV파일 <br>
+	 * @param cliptime 초기값 <br>
+	 * 		단위 밀리초 <br>
+	 * @param clip 재생전 로드(데이터라인) <br>
+	 * 
+	 *
+	 */
 public class MusicPanel implements ActionListener, Runnable {
-	private String[] btn_M = {"open", "play", "pause", "stop", "reset", "Record", "StopRecrod", "PlayRecord"};
+	private String[] btn_M = { "open", "play", "pause", "stop", "reset", "Record", "StopRecrod", "PlayRecord" };
 	private JButton[] btnM = new JButton[8];
-	private String[] tp = {"musicState", "recordState"};
+	private String[] tp = { "musicState", "recordState" };
 	private JFileChooser filechooser;
 	private File selectedFile;
 	private JPanel eastPanel = new JPanel();
 	private long cliptime = 0;
 	private Clip clip;
 	private long endTime;
-	
+
 	public static JTextPane[] tpMR = new JTextPane[2];
 	public static long startTime;
 	public static long playTime;
 	public static long time;
-	
+
 	public Main parent;
 
 	public MusicPanel(Main main) {
@@ -46,23 +56,21 @@ public class MusicPanel implements ActionListener, Runnable {
 		eastPanel.setBorder(new LineBorder(new Color(255, 187, 0), 10));
 		eastPanel.setFocusable(false);
 		eastPanel.setOpaque(false);
-		
-		
+
 		for (int i = 0; i < tp.length; ++i) {
 			tpMR[i] = new JTextPane();
 			if (i == 0) {
 				tpMR[i].setBounds(593, 480, 205, 30);
 			} else {
 				tpMR[i].setBounds(547, 105, 300, 30);
-			} 
-				parent.getContentPane().add(tpMR[i]);
-				tpMR[i].setAlignmentX(parent.CENTER_ALIGNMENT);
-				tpMR[i].setEditable(false);
-				tpMR[i].setFocusable(false);
+			}
+			parent.getContentPane().add(tpMR[i]);
+			tpMR[i].setAlignmentX(parent.CENTER_ALIGNMENT);
+			tpMR[i].setEditable(false);
+			tpMR[i].setFocusable(false);
 		}
 		TextPane();
 
-	
 		for (int i = 0; i < btn_M.length; ++i) {
 			if (i < 3) {
 				btnM[i] = new JButton(btn_M[i]);
@@ -85,7 +93,10 @@ public class MusicPanel implements ActionListener, Runnable {
 		}
 
 	}
-
+	/**
+	 * ActionEvent에 따른 actionPerformed
+	 */
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -189,7 +200,10 @@ public class MusicPanel implements ActionListener, Runnable {
 		}
 
 	}
-
+	/**
+	 * {@link AudioInputStream}에 selectedFile 넣기 <br>
+	 * {@link Clip}에 Audio clip 취득 및 준비
+	 */
 	public void getmusic() {
 		try {
 			AudioInputStream stream = AudioSystem.getAudioInputStream(selectedFile);
@@ -202,7 +216,9 @@ public class MusicPanel implements ActionListener, Runnable {
 		}
 
 	}
-	
+	/**
+	 * ActionEvent {@link JButton}에 따라 {@link JPanel} 입력 수정 
+	 */
 	public void TextPane() {
 		tpMR[0].setText("등록 된 음악 없음");
 		for (JTextPane jtp : tpMR) {
@@ -212,12 +228,14 @@ public class MusicPanel implements ActionListener, Runnable {
 			document.setParagraphAttributes(0, document.getLength(), center, false);
 		}
 	}
-	
+	/**
+	 * 불러온 WAV파일 이름에 따라 {@link ImageIcon} 변경
+	 */
 	public void setPic() {
 		if (selectedFile.getName().equals("DNA Piano Cover.wav")) {
 			Pic.icon1 = new ImageIcon("C:\\Users\\PC!\\Desktop\\JAVA\\MiniProject\\Icon\\DNA.png");
 			Pic.setting();
-		} else if (selectedFile.getName().equals("Believer Piano Cover.wav") 
+		} else if (selectedFile.getName().equals("Believer Piano Cover.wav")
 				|| selectedFile.getName().equals("Believer Drum Cover.wav")) {
 			Pic.icon1 = new ImageIcon("C:\\Users\\PC!\\Desktop\\JAVA\\MiniProject\\Icon\\believer.png");
 			Pic.setting();
@@ -227,17 +245,21 @@ public class MusicPanel implements ActionListener, Runnable {
 		}
 	}
 
+	/**
+	 * 녹음된 시간(end Time)동안 {@link Thread.sleep}초로 진행<br>
+	 * TreeMap key키 값에 맞춰 clip 실행
+	 */
 	@Override
 	public void run() {
 		for (long i = 0; i < endTime; ++i) {
 			try {
-				Thread.sleep((long)1);
+				Thread.sleep((long) 1);
 				AudioInputStream stream = AudioSystem.getAudioInputStream(BothKeyPress.map.get(i));
 				Clip clip = AudioSystem.getClip();
 				clip.open(stream);
 				clip.start();
 			} catch (Exception e) {
-				
+
 			}
 		}
 		tpMR[1].setText("끝   ('P' = map.clear)");

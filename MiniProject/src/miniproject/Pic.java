@@ -34,7 +34,9 @@ public class Pic {
 		center.setFocusable(false);
 		setting();
 	}
-	
+	/**
+	 * ActionEvent시 이미지 변화
+	 */
 	public static void setting() {
 		img = icon1.getImage();
 		changeImg = img.getScaledInstance(300, 260, Image.SCALE_SMOOTH);
