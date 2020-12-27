@@ -32,6 +32,9 @@ public class BothKeyPress implements KeyListener {
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	public void record() {
 		if (Main.now == PlayStatus.RECORD) {
 			map.put(System.currentTimeMillis() - MusicPanel.startTime, file);
