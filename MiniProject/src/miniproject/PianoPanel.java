@@ -8,6 +8,12 @@ import javax.swing.JPanel;
 import javax.swing.JRootPane;
 import javax.swing.border.LineBorder;
 
+/**
+ * JFrame에 추가할 {@link JPanel} 과 {@link JButton}. <br>
+ * 
+ * @author 이현성
+ *
+ */
 public class PianoPanel {
 	private String[] btn_W = { "a", "s", "d", "f", "g", "h", "j", "k" };
 	private String[] btn_B = { "w", "e", "r", "t", "y", "u" };

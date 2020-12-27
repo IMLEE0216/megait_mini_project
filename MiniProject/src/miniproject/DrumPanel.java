@@ -7,20 +7,21 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
+/**
+ * JFrame에 추가할 {@link JPanel} 과 {@link JButton}. <br>
+ * @author 이현성
+ */
 
 public class DrumPanel {
 	private static final String WAV = "C:\\Users\\PC!\\Desktop\\JAVA\\MiniProject\\Icon\\drum";
 	private static final String PNG = ".png";
-
 	private String[] btn_D = {"d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9"};
 	public static JButton[] btnD = new JButton[9];
-	
 	private ImageIcon icon, changeIcon;
 	private Image img, changeImg;
 	private JPanel dPanel = new JPanel();
-
 	public Main parent;
-
+	
 	public DrumPanel(Main main) {
 		parent = main;
 	}

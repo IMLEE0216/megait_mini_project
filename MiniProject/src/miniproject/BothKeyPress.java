@@ -38,7 +38,7 @@ public class BothKeyPress implements KeyListener {
 	}
 	
 	/**
-	 * 
+	 * RECORD 상태일시 {@link TreeMap}에 입력키 값 저장
 	 */
 	public void record() {
 		if (Main.now == PlayStatus.RECORD) {
@@ -243,7 +243,9 @@ public class BothKeyPress implements KeyListener {
 		}
 
 	}
-
+/**
+ * {@link JButton}의 원래 background로 수정
+ */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		for (JButton btnD : DrumPanel.btnD) {
