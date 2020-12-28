@@ -35,7 +35,7 @@
 
  <YoutubeLink>
 <div>
-  <a href="https://www.youtube.com/watch?v=sUIcFpxSJtI" target="_blank"><image src = "https://img.youtube.com/vi/sUIcFpxSJtI/mqdefault.jpg"></a>
+  <a href="https://www.youtube.com/watch?v=_yT3OsAEcyk" target="_blank"><image src = "https://img.youtube.com/vi/_yT3OsAEcyk/mqdefault.jpg"></a>
 </div>
   
   
