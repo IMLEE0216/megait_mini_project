@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 /**
  * 프로그램의 Main 프레임 <br>
- * 사용자의 입력에 따라 {@link KeyListener} 및 {@link ActionListener} 포함한다. <br>
+ * 사용자의 입력에 따라 {@link KeyListener}를 포함한다.
  * @author 이현성
  * 
  */
