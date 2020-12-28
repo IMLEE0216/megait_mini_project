@@ -23,7 +23,11 @@ import javax.swing.JButton;
  */
 public class BothKeyPress implements KeyListener {
 	public static final String WAV = "C:\\Users\\PC!\\Desktop\\JAVA\\MiniProject\\sound_files\\";
+
 	public File file;
+	/**
+	 * Long, File 형식으로 Map 저장 
+	 */
 	public static TreeMap<Long, File> map = new TreeMap<>();
 
 	public void clip(File file) {
