@@ -158,6 +158,7 @@ class MusicPanel implements ActionListener, Runnable {
 				clip.stop();
 				clip = null;
 				selectedFile = null;
+				cliptime = 0;
 				tpMR[0].setText("음악 없음");
 			} catch (Exception e1) {
 				tpMR[0].setText("등록된 음악이 없음");
