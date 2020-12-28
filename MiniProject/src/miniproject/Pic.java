@@ -7,7 +7,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
-
+/**
+ * JFrame에 추가할 {@link JLabel}
+ * @author 이현성
+ *
+ */
 public class Pic {
 	public static JLabel center = new JLabel();
 	public static ImageIcon icon1, icon11;
