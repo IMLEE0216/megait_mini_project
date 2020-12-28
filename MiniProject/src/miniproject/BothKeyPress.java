@@ -22,10 +22,6 @@ import javax.swing.JButton;
  *
  */
 public class BothKeyPress implements KeyListener {
-	/**
-	 * 
-	 * @param file 컴퓨터 내에 저장된 피아노 음 파일 
-	 */
 	public static final String WAV = "C:\\Users\\PC!\\Desktop\\JAVA\\MiniProject\\sound_files\\";
 	public File file;
 	public static TreeMap<Long, File> map = new TreeMap<>();

@@ -22,11 +22,6 @@ import javax.swing.text.StyledDocument;
 /**
  * JFrame에 {@link JButton}, {@link JPanel} 추가 <br>
  * 
- * @param filechooser  파일열기창 <br>
- * @param selectedFile 선택된 WAV파일 <br>
- * @param cliptime     초기값 <br>
- *                     단위 밀리초 <br>
- * @param clip         재생전 로드(데이터라인) <br>
  * @author 이현성
  *
  */
@@ -252,7 +247,7 @@ class MusicPanel implements ActionListener, Runnable {
 	}
 
 	/**
-	 * 녹음된 시간(end Time)동안 {@link Thread.sleep}초로 진행 <br>
+	 * 녹음된 시간(end Time)동안 Thread.sleep초로 진행 <br>
 	 * TreeMap key키 값에 맞춰 clip 실행
 	 */
 	@Override
