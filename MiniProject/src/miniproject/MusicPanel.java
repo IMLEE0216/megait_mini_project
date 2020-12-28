@@ -14,7 +14,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
-import javax.swing.plaf.FileChooserUI;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
@@ -26,20 +25,44 @@ import javax.swing.text.StyledDocument;
  *
  */
 class MusicPanel implements ActionListener, Runnable {
+	/**
+	 * {@link JButton}에 넣을 String 객체
+	 */
 	private String[] btn_M = { "open", "play", "pause", "stop", "reset", "Record", "StopRecrod", "PlayRecord" };
+	/**
+	 * 기능 Array JButton
+	 */
 	private JButton[] btnM = new JButton[8];
+	/**
+	 * {@link JTextPane}상태표시를 위한 String 객체 
+	 */
 	private String[] tp = { "musicState", "recordState" };
+	/**
+	 * {@link JFileChooser}로 컴퓨터 내부 파일 불러오기
+	 */
 	private JFileChooser filechooser;
+	/**
+	 * filechooser로 불러온 {@link File}
+	 */
 	private File selectedFile;
 	private JPanel eastPanel = new JPanel();
+	/**
+	 * WAV 파일 시작 지점 초기 설정
+	 */
 	private long cliptime = 0;
 	private Clip clip;
+	/**
+	 * 녹음 길이 시간
+	 */
 	private long endTime;
-
+	/**
+	 * 상태 표시 Array JTextPane
+	 */
 	public static JTextPane[] tpMR = new JTextPane[2];
+	/**
+	 * 녹음 시작 시 시간
+	 */
 	public static long startTime;
-	public static long playTime;
-	public static long time;
 
 	public Main parent;
 
@@ -47,6 +70,11 @@ class MusicPanel implements ActionListener, Runnable {
 		parent = main;
 	}
 
+	/**
+	 * getContentPane()이 된 버튼들을 위하여 {@link JPanel} 투명화 <br>
+	 * {@link JPanel} Border 및 Color 추가
+	 * 
+	 */
 	public void setMusicPanel() {
 		eastPanel.setBounds(500, 0, 380, 600);
 		parent.getContentPane().add(eastPanel);
@@ -92,7 +120,8 @@ class MusicPanel implements ActionListener, Runnable {
 	}
 
 	/**
-	 * ActionEvent에 따른 actionPerformed
+	 * ActionEvent에 따른 actionPerformed <br>
+	 * ActionEvent에 따른 이미지 변화
 	 */
 
 	@Override
@@ -193,7 +222,6 @@ class MusicPanel implements ActionListener, Runnable {
 			Pic.icon1 = new ImageIcon("C:\\Users\\PC!\\Desktop\\JAVA\\MiniProject\\Icon\\play.png");
 			Pic.setting();
 			tpMR[1].setText("실행 중...");
-			playTime = System.currentTimeMillis();
 			Thread th = new Thread(this);
 			th.start();
 		}

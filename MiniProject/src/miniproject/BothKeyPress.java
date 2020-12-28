@@ -4,9 +4,6 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map.Entry;
 import java.util.TreeMap;
 
 import javax.sound.sampled.AudioInputStream;
@@ -22,6 +19,9 @@ import javax.swing.JButton;
  *
  */
 public class BothKeyPress implements KeyListener {
+	/**
+	 * WAV 음악 파일 경로 path
+	 */
 	public static final String WAV = "C:\\Users\\PC!\\Desktop\\JAVA\\MiniProject\\sound_files\\";
 
 	public File file;
@@ -29,7 +29,10 @@ public class BothKeyPress implements KeyListener {
 	 * Long, File 형식으로 Map 저장 
 	 */
 	public static TreeMap<Long, File> map = new TreeMap<>();
-
+	/**
+	 * file을 {@link AudioInputStream}의 stream에 담아 clip에 취득 및 실행 <br> 
+	 * @param file 실행할 파일
+	 */
 	public void clip(File file) {
 		this.file = file;
 		try {
@@ -51,7 +54,11 @@ public class BothKeyPress implements KeyListener {
 			System.out.println(map);
 		}
 	}
-	
+	/**
+	 * getKeyCode()에 한땀한땀 피아노, 드럼 WAV파일 등록 <br>
+	 * {@link JButton}의 본 background로 수정 <br>
+	 * 한옥타브 안에서 화음 추가
+	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()) {

@@ -6,7 +6,8 @@ import javax.swing.JFrame;
 
 /**
  * 프로그램의 Main 프레임 <br>
- * 사용자의 입력에 따라 {@link KeyListener}를 포함한다.
+ * 사용자의 입력에 따라 {@link KeyListener}를 포함한다. <br>
+ * 화면크기 변경은 불가
  * @author 이현성
  * 
  */
